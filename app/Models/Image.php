@@ -9,6 +9,6 @@ class Image extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'image','description'
+        'image','description','cost_and_care_estimate'
     ];
 }

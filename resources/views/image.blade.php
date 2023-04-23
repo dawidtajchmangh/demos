@@ -9,7 +9,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>image Upload </title>
     </head>
- 
+
     <body>
 
         @if ($message = Session::get('success'))
@@ -28,7 +28,7 @@
         </ul>
     </div>
 @endif
-   
+
         <div class="" style="width:50%; margin-left:50px;">
             @if(Auth::user()->type == "admin")
             <form action="{{ url('/image/admin') }}" method="POST" class="" enctype="multipart/form-data">
@@ -37,6 +37,7 @@
                 <form action="{{ route('add_image') }}" method="POST" class="" enctype="multipart/form-data">
                     @endif
                 @csrf
+
                 <label class="block mb-4">
                     <span class="sr-only">Choose File</span>
                     <input type="file" name="image"
@@ -45,7 +46,8 @@
                     <span class="text-red-600 text-sm">{{ $message }}</span>
                     @enderror
                 </label>
-                <textarea name="description" id="description"  class="form-control" style="border:1px solid;" placeholder="description" cols="30" rows="10"></textarea>
+                <textarea name="description" id="description"  class="form-control mb-4"" style="border:1px solid;" placeholder="description" cols="30" rows="10"></textarea>
+                <textarea name="careAndCostEstimate" id="careAndCostEstimate"  class="form-control" style="border:1px solid;" placeholder="care and cost estimate" cols="30" rows="10"></textarea>
                 <button type="submit" class="btn btn-primary mt-3">Submit</button>
             </form>
         </div>

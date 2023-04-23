@@ -170,11 +170,11 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `ty
 (1, 'Admin', 'admin@example.com', NULL, '$2y$10$GIh22eysCGZ3ogF5YvVRhe1zh1BPqQkycvyD.iMiOcY.ll6NQNwyG', 1, NULL, '2023-01-05 17:04:48', '2023-03-08 13:14:13');
 
 --
--- 
+--
 --
 
 --
--- 
+--
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
@@ -275,3 +275,14 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+--
+-- Add care and cost estimate field to table `images`
+--
+
+ALTER TABLE `images`
+  ADD COLUMN `care_and_cost_estimate` varchar(1200) COLLATE utf8mb4_unicode_ci DEFAULT NULL;
+COMMIT;
+
+-- --------------------------------------------------------
+

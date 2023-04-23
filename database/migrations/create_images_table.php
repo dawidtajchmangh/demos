@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('image');
             $table->string('description');
+            $table->string(('care_and_cost_estimate'));
             $table->timestamps();
         });
     }
