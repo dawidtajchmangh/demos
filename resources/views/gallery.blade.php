@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="zxx">
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title></title>
-        
+
         <!-- fav icon -->
         <link rel="icon" href="assets/images/fav-icon/fav-icon.png">
-        
+
         <!-- bootstarp -->
         <link rel="stylesheet" href="assets/css/vendors/bootstrap.min.css">
-        
+
         <!-- animate.css file -->
         <link rel="stylesheet" href="assets/css/vendors/animate.css">
-        
+
         <!-- Fancybox -->
         <link rel="stylesheet" href="assets/css/vendors/jquery.fancybox.min.css">
-        
+
         <!-- fontAwesome -->
         <link rel="stylesheet" href="assets/css/vendors/all.min.css">
-        
+
         <!-- Swiper -->
         <link rel="stylesheet" href="assets/css/vendors/swiper.min.css">
-        
+
         <!-- vegas -->
         <link rel="stylesheet" href="assets/css/vendors/vegas.min.css">
-        
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
         <!-- Splitting -->
         <link rel="stylesheet" href="assets/css/vendors/splitting.css">
-        
+
         <!-- Font Family -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500;600;700;800;900&amp;family=Poppins:wght@400;500;600;700;800;900&amp;display=swap">
-        
+
         <!-- main-LTR-1 -->
         <link rel="stylesheet" href="assets/css/main-LTR-1.css">
   </head>
-  <body class="   overlay-is-grey hard-squared-btns "> 
+  <body class="   overlay-is-grey hard-squared-btns ">
     <!--Start Page Header-->
     <header class=" page-header light-header menu-on-end " id="page-header">
       <div class="header-search-box">
         <div class="close-search"></div>
         <form class="nav-search search-form" role="search" method="get" action="#">
-          <div class="search-wraper"> 
+          <div class="search-wraper">
             <label class="search-lbl">Search for:</label>
             <input class="search-input" type="search" placeholder="Search..." name="searchInput" autofocus="autofocus"/>
             <button class="search-btn" type="submit"><i class="fas fa-search icon"></i></button>
@@ -60,7 +60,7 @@
             <ul class="navbar-nav  mobile-menu ">
 
               <li class="nav-item"><a class="nav-link  " href="{{url('/')}}">Home </a></li>
-        
+
               <li class="nav-item"><a class="nav-link  " href="#">Gallery</a></li>
 
               @if (Route::has('login'))
@@ -119,7 +119,7 @@
           <div class="line-on-center wow fadeIn" data-wow-delay=".6s"></div>
         </div>
         <div class="portfolio-wraper  ">
-        
+
           <div class="portfolio-group wow fadeIn" data-wow-delay=".2s">
             <div class="row no-gutters">
                 @foreach($images as $image)
@@ -128,12 +128,13 @@
                 {{-- <a class="portfolio-img-link " href="" data-fancybox=".filter"> --}}
                     <div class="overlay overlay-color"></div>
                     <img class="portfolio-img  img-fluid " src="gallery/{{$image->image}}" alt="portfolio item photo">
-                   
+
                 {{-- </a> --}}
                   <div class="item-info "><span class="info-title">Description   </span>
-                    
                       <p class="" style="color:white; word-wrap: break-word;">{{$image->description}}</p>
-                 
+                      <a class="" style="color:white; word-wrap: break-word;"
+                         target="_new" href='{{url("/file?data=$image->care_and_cost_estimate")}}'>Care and cost estimate</a>
+
                   </div>
                 </div>
               </div>
@@ -144,7 +145,7 @@
 
       </div>
     </section>
-  
+
     <div class="loading-screen" id="loading-screen">
       <div class="spinner">
         <div class="bounce1"></div>
@@ -152,34 +153,34 @@
         <div class="bounce3"></div>
       </div>
     </div>
-  
+
     <div class="back-to-top" id="back-to-top"><i class="fas fa-arrow-up icon"></i></div>
-    <!-- End back-to-top Component-->   
-        
+    <!-- End back-to-top Component-->
+
         <!--     JQuery     -->
         <script src="assets/js/vendors/jquery-3.4.1.min.js"></script>
-        
+
         <!--     bootstrap     -->
         <script src="assets/js/vendors/bootstrap.bundle.min.js"></script>
-        
+
         <!--     fancybox     -->
         <script src="assets/js/vendors/jquery.fancybox.min.js"></script>
-        
+
         <!--     wow     -->
         <script src="assets/js/vendors/wow.min.js"></script>
-        
+
         <!--     isotope     -->
         <script src="assets/js/vendors/isotope-min.js"></script>
-        
+
         <!--     swiper     -->
         <script src="assets/js/vendors/swiper.min.js"></script>
-        
+
         <!--     vegas     -->
         <script src="assets/js/vendors/vegas.min.js"></script>
-        
+
         <!--     Splitting     -->
         <script src="assets/js/vendors/splitting.min.js"></script>
-        
+
         <!--     main     -->
         <script src="assets/js/main.js"></script>
   </body>

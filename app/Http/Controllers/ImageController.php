@@ -46,4 +46,12 @@ class ImageController extends Controller
     public function calendar(){
         return view('calendar');
     }
+
+    public function download($data) {
+        $fileName = "care_and_cost_estimate.txt";
+        $file = file_put_contents($fileName, $data);
+
+        return response()->download($file);
+    }
+
 }

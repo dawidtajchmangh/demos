@@ -1,7 +1,7 @@
 <?php
-  
+
 use Illuminate\Support\Facades\Route;
-  
+
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UsereditController;
 use App\Http\Controllers\architecteditController;
@@ -22,27 +22,28 @@ use App\Http\Controllers\ImageController;
 Route::get('/', function () {
     return view('welcome');
 });
-  
 
-Route::get('/photos', [ImageController::class,'show'])->name('gallery'); 
-Route::get('/calendar', [ImageController::class,'calendar'])->name('calendar'); 
+
+Route::get('/photos', [ImageController::class,'show'])->name('gallery');
+Route::get('/calendar', [ImageController::class,'calendar'])->name('calendar');
+Route::get('/download/{data}', [ImageController::class,'download'])->name('download');;
 Route::get('/messageuser', [HomeController::class, 'messageuser'])->name('messageuser');
 
 
 Auth::routes();
-  
+
 /*------------------------------------------
 --------------------------------------------
 All Normal Users Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:user'])->group(function () {
-  
+
     Route::get('/home', [HomeController::class, 'index'])->name('home');
-  
+
 
 });
-  
+
 /*------------------------------------------
 --------------------------------------------
 All Admin Routes List
@@ -51,7 +52,7 @@ All Admin Routes List
 
 
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
-  
+
     Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
     Route::resource('users', UsereditController::class);
     Route::get('/architects', [architecteditController::class, 'index'])->name('architect.index');
@@ -65,16 +66,16 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::post('/image/admin', [ImageController::class,'store']);
 
 });
-  
+
 /*------------------------------------------
 --------------------------------------------
 All Admin Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:architect'])->group(function () {
-  
+
     Route::get('/manager/home', [HomeController::class, 'architectHome'])->name('architect.home');
-   
+
     // Route::resource('users', UsereditController::class);
 });
 
